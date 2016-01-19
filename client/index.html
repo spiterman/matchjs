@@ -5,23 +5,36 @@
     <title>MatchJS</title>
     <!-- stylesheets-->
     <!-- <link rel="stylesheet" type="text/css" href="styles/styles.css"> -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   </head>
     <body>
-
+        <nav-dir></nav-dir>
+        <w3-test-directive></w3-test-directive>
         <div ui-view></div>
 
         <!-- bower components -->
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-        
+        <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+
         <!-- main config/routing -->
         <script src="app/app.js"></script>
 
         <!-- controllers -->
         <script src="app/components/home/homeController.js"></script>
-        
+
         <!-- shared services -->
         <!-- component services -->
         <!-- custom directives -->
+        <script src="app/directives/navbarDirectives.js"></script>
+        <script>
+            angular.module('app.navbarDirectives', [])
+                    .directive("w3TestDirective", function() {
+            return {
+                template : "<h1>Made by a directive!</h1>"
+            };
+        });
+        </script>
   </body>
 </html>

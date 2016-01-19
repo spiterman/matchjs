@@ -1,6 +1,7 @@
 angular.module('app', [
   'ui.router',
-  'app.home'
+  'app.home',
+  'app.navbarDirectives'
   ])
   .config(['$stateProvider','$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
@@ -10,5 +11,9 @@ angular.module('app', [
     .state('home', {
       templateUrl: 'app/components/home/home.html',
       url: '/'
+    })
+    .state('test', {
+      templateUrl: 'app/components/test/test.html',
+      url: '/test'
     });
   }]);
